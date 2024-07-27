@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Yelp Data Visualization</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .tooltip {
+            position: absolute;
+            background-color: #333;
+            color: #fff;
+            padding: 8px;
+            font-size: 12px;
+            border-radius: 4px;
+            pointer-events: none;
+            opacity: 0;
+            transform: translate(-50%, -100%);
+            transition: opacity 0.3s ease-in-out;
+        }
+        svg {
+            margin: auto;
+        }
+        #buttons-container {
+            margin-top: 10px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+        .button-group-container {
+            padding-left: 15px;
+            width: 200px;
+        }
+        .button-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+        }
+        #introduction-text {
+            max-width: 600px;
+            text-align: center;
+            margin: 10px 0;
+            font-size: 18px;
+        }
+        #buttons-container button {
+            margin: 5px;
+        }
+        .button-label {
+            text-decoration: underline;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="introduction-text">
+        <p>Welcome to the Yelp Data Visualization! Explore the graphs below to see trends and insights from the Yelp dataset.</p>
+    </div>
+    <div id="my_dataviz"></div>
+    <div id="buttons-container">
+        <div class="button-group-container">
+            <div class="button-group">
+                <span class="button-label">Business Ratings:</span>
+                <button id="btn1">Show Business Ratings</button>
+            </div>
+        </div>
+        <div class="button-group-container">
+            <div class="button-group">
+                <span class="button-label">Review Counts:</span>
+                <button id="btn2">Show Review Counts</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
